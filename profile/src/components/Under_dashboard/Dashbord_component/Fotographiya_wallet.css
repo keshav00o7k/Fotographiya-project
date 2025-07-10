@@ -1,0 +1,224 @@
+.wallet-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  width: 100%;
+}
+.paymentbutton {
+  margin: 20px 0px 16px;
+  padding: 10px 200px;
+  border: 2px solid black;
+  border-radius: 6px;
+  background-color: #2887af;
+  color: #ffff;
+  font-weight: 500;
+  font-size: 20px;
+}
+.lefttext {
+  margin-top: 1px;
+  display: flex;
+  gap: 2px;
+}
+.notification-info {
+  background-color: #f8fcff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 24px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.notify-heading {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.notify-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 6px; /* Pehle 10px tha, ab kam */
+}
+
+.notify-row span {
+  font-size: 14px;
+  color: #444;
+  margin-right: 4px; /* Extra right margin hata ke compact banaya */
+}
+
+.credit {
+  margin-left: auto; /* Yeh maintain karega right-align */
+  font-weight: 500;
+  color: #333;
+}
+.infiimg {
+  height: 15px;
+  width: 15px;
+  margin-top: 5px;
+}
+
+.notify-row img {
+  width: 20px;
+  height: 20px;
+}
+
+.notify-row span {
+  font-size: 14px;
+  color: #444;
+}
+
+.wallet-left,
+.wallet-right {
+  width: 48%;
+}
+
+/* Left Side */
+.wallet-left h2 {
+  color: #173e6c;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #173e6c;
+  border-bottom: 2px solid #f4cb26;
+  display: inline-block;
+  margin: 15px 0 10px 0;
+}
+
+.balance-box {
+  background: #f8fbfd;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.balance-box h1 {
+  font-size: 32px;
+  color: #226c9c;
+  margin-bottom: 5px;
+}
+
+.balance-box p {
+  font-size: 14px;
+  color: #888;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c5d7e5;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 320px;
+  margin-bottom: 10px;
+}
+
+.input-box input {
+  border: none;
+  font-size: 18px;
+  width: 100px;
+  outline: none;
+  text-align: right;
+}
+
+.currency {
+  font-size: 16px;
+  margin-right: 8px;
+}
+.wallet-container {
+  border-radius: 5px;
+}
+.credit-value {
+  font-size: 14px;
+  color: #555;
+  margin-left: 10px;
+}
+
+.tax-info {
+  font-size: 13px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.amount-options {
+  margin-top: 15px;
+}
+
+.amount-options button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: 1px solid #b5c7d9;
+  background: white;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.amount-options button:hover {
+  background-color: #f0f7ff;
+  border-color: #7aaed6;
+}
+
+/* Right Side */
+.wallet-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.how-to-use {
+  background: #f5fafd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.maindiv {
+  display: flex;
+  border-radius: 5px;
+}
+.how-to-use h4 {
+  color: #226c9c;
+  margin-bottom: 12px;
+}
+
+.notification-costs p {
+  font-size: 14px;
+  color: #333;
+  margin: 6px 0;
+}
+
+.notification-costs .icon {
+  margin-right: 8px;
+}
+
+.wallet-subscription-box {
+  background: #f5fafd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.wallet-subscription-box p {
+  font-size: 14px;
+  color: #444;
+}
+
+.wallet-subscription-box a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 5px;
+}
