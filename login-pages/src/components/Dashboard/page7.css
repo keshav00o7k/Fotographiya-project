@@ -1,0 +1,67 @@
+.page7-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Collage image styling */
+.image-section {
+  width: 100%;
+  max-width: 660px; /* match what you saw at 80% zoom */
+  margin-bottom: 60px;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Text section below image */
+.text-section {
+  max-width: 700px;
+}
+
+.subtitle {
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.highlight-line {
+  width: 60px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #f4c900;
+  margin: 32px 0;
+}
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .image-section {
+    max-width: 100%;
+  }
+}
