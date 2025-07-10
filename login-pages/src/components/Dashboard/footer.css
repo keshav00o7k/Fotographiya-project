@@ -39,12 +39,11 @@
 .bttn {
   display: flex;
   gap: 15px;
-  
 }
-.ul-btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.ul-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .bttn button {

@@ -7,16 +7,16 @@ const Page6 = () => {
         <div className="page6-left">
           <div className="imagrrr">
             <img className="ie" src="/image/page6.jpg" alt="illustration" />
-            <p className="section-subtitle">WHY CHOOSE US?</p>
-            <h2 className="text3">
-              Fotographiya segregates thousands of photographs from an event so
-              you don’t have to!
-            </h2>
-            <div className="highlight-line4"></div>
           </div>
         </div>
 
         <div className="page6-right">
+          <p className="section-subtitle">WHY CHOOSE US?</p>
+          <h2 className="text3">
+            Fotographiya segregates thousands of photographs from an event so
+            you don’t have to!
+          </h2>
+          <div className="highlight-line4"></div>
           <div className="feature-grid">
             <div className="feature-box">
               <h4>Facial Recognition</h4>

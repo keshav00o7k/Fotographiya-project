@@ -2,7 +2,7 @@
   background-color: #eef7fb;
   text-align: center;
   padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .mainbox h1 {
@@ -11,13 +11,13 @@
   color: #333;
   margin-bottom: 10px;
 }
-.byy{
-   display: flex;
-   margin-top:20px ;
-   justify-content: center;
-   align-items: center;
-   flex-direction: row;
-    }
+.byy {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 
 .mainbox p {
   font-size: 18px;
@@ -26,16 +26,14 @@
 }
 .mainbox button {
   border: none;
- background-color: transparent;
+  background-color: transparent;
   cursor: pointer;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
-  
 }
 
 .mainbox button:hover {
   transform: translateY(-3px);
-  
 }

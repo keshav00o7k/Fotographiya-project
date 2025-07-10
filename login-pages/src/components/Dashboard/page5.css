@@ -61,7 +61,7 @@
 }
 
 .know-more-link::before {
-  content: '→';
+  content: "→";
   margin-right: 8px;
   font-weight: bold;
 }
@@ -81,9 +81,7 @@
   border-radius: 50%;
   background-color: #f4c900;
   padding: 20px;
-
 }
-
 
 @media (max-width: 768px) {
   .main3 {
@@ -102,7 +100,7 @@
 }
 
 .imag2 {
-height: 100%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;

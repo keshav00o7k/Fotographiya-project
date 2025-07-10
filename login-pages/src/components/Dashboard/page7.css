@@ -8,25 +8,6 @@
   text-align: center;
 }
 
-/* Collage image styling */
-.image-section {
-  width: 100%;
-  max-width: 660px; /* match what you saw at 80% zoom */
-  margin-bottom: 60px;
-}
-
-.image-section img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-
-/* Text section below image */
-.text-section {
-  max-width: 700px;
-}
-
 .subtitle {
   color: #2c3e50;
   text-transform: uppercase;
@@ -49,8 +30,10 @@
   color: #111;
   margin-bottom: 20px;
 }
-
-
+.collage-container img {
+  width: 100%;
+  height: 50%;
+}
 
 @media (max-width: 768px) {
   .title {
@@ -59,9 +42,5 @@
 
   .subtitle {
     font-size: 12px;
-  }
-
-  .image-section {
-    max-width: 100%;
   }
 }

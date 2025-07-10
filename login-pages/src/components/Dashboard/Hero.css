@@ -1,6 +1,6 @@
 /* Hero section container */
 .hero {
-  background-color: #edf8ff;
+  background-color: #ffff;
   padding: 0 32px;
   max-width: 100%;
   margin: auto;
@@ -83,6 +83,8 @@
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: auto;
+  /* width: 803px; */
+  height: 850px;
+
+  border-radius: 1200px;
 }

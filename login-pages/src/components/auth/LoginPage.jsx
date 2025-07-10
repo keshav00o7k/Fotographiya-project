@@ -25,7 +25,7 @@ function LoginPage() {
       <div className="login-container">
         <div className="a12">
           <div className="form-img">
-            <img src="/images/login-banner.jpg" alt="banner" />
+            <img src="/images/login-banner.jpg" alt="banner" className="c" />
             <div className="logo-wrapper">
               <a
                 href="https://Fotographiya.com"
@@ -33,7 +33,8 @@ function LoginPage() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/images/logo_colored_white.png"
+                  src="/images/logo_colored_white.png
+                  "
                   alt="Fotographiya"
                   width="157"
                 />
@@ -50,9 +51,9 @@ function LoginPage() {
                   promotional events, and garnered awards and recognition for
                   our innovative approach. But this is just the beginning.“
                 </p>
-                <h4 style={{ marginBottom: "5px" }}>Dabboo Ratnani</h4>
+                <h4 style={{ marginBottom: "5px" }}>Mohit Barthunia</h4>
                 <p style={{ fontSize: "12px", marginBottom: "0px" }}>
-                  Celebrity Photographer
+                  Founder of Fotographiya
                 </p>
               </div>
             </div>
