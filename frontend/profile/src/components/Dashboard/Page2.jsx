@@ -1,5 +1,5 @@
 import "./page2.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Page2 = () => {
@@ -12,6 +12,13 @@ const Page2 = () => {
   const [code, setCode] = useState(["", "", "", "", "", ""]);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/groups/all")
+      .then((res) => res.json())
+      .then((data) => setGroups(data))
+      .catch((err) => console.error(err));
+  }, []);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -29,17 +36,22 @@ const Page2 = () => {
     setStep(2);
   };
 
-  const handleCreateGroup = () => {
+  const handleCreateGroup = async () => {
     if (!groupName.trim()) return;
-    const newGroup = {
-      id: Date.now(),
-      name: groupName,
-      privacy: selectedPrivacy,
-      photos: [],
-    };
-    const updatedGroups = [...groups, newGroup];
-    setGroups(updatedGroups); // ✅ Only updates state, not localStorage
-    handleCloseModal();
+
+    try {
+      const res = await fetch("http://localhost:5000/api/groups/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: groupName, privacy: selectedPrivacy }),
+      });
+      const data = await res.json();
+      setGroups((prev) => [...prev, data]);
+      handleCloseModal();
+    } catch (err) {
+      console.error(err);
+      alert("Error creating group.");
+    }
   };
 
   const handleJoinClick = () => {
@@ -90,9 +102,9 @@ const Page2 = () => {
           <div className="group-list">
             {groups.map((group) => (
               <div
-                key={group.id}
+                key={group._id}
                 className="group-card"
-                onClick={() => navigate(`/group/${group.id}`)}
+                onClick={() => navigate(`/group/${group._id}`)}
               >
                 <div className="group-thumbnail">
                   <img src="/images/group-icon.png" alt="group-icon" />
@@ -105,7 +117,7 @@ const Page2 = () => {
                     )}
                   </span>
                   <span className="group-photos-count">
-                    {group.photos?.length || 0} Photos
+                    {group.media?.length || 0} Photos
                   </span>
                 </div>
               </div>
@@ -113,6 +125,8 @@ const Page2 = () => {
           </div>
         </div>
       </div>
+
+      {/* Create Modal */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -170,14 +184,15 @@ const Page2 = () => {
         </div>
       )}
 
+      {/* Join Modal */}
       {showJoinModal && (
         <div className="modal-overlay">
           <div className="modal-content join-code-modal">
             <span className="close-btn" onClick={() => setShowJoinModal(false)}>
               &times;
             </span>
-            <h2>Enter Event Ucode</h2>
-            <p>Enter the 6 digit unique code of your event to join the group</p>
+            <h2>Enter Event Code</h2>
+            <p>Enter the 6-digit code to join the group</p>
             <div className="code-inputs">
               {code.map((value, idx) => (
                 <input
@@ -193,7 +208,7 @@ const Page2 = () => {
             <button className="next-btn" onClick={handleJoinGroup}>
               Join Group
             </button>
-            <p>You can also join group via shared link</p>
+            <p>You can also join via shared link</p>
           </div>
         </div>
       )}

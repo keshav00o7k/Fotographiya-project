@@ -7,44 +7,53 @@ const Creategroups = () => {
   const [groupData, setGroupData] = useState({});
   const [media, setMedia] = useState([]);
   const [myPhotos, setMyPhotos] = useState([]);
-  const [currentTab, setCurrentTab] = useState("my"); // "my" or "all"
+  const [currentTab, setCurrentTab] = useState("my");
 
+  // Fetch group data from backend
   useEffect(() => {
-    const storedGroups =
-      JSON.parse(localStorage.getItem("createdGroups")) || [];
-    const group = storedGroups.find((g) => g.id === Number(id));
-    setGroupData(group || { name: "Group", photos: [] });
-    setMedia(group?.photos || []);
+    const fetchGroup = async () => {
+      try {
+        const res = await fetch(`http://localhost:5000/api/groups/${id}`);
+        const data = await res.json();
+        setGroupData(data);
+        setMedia(data.media || []);
+      } catch (err) {
+        console.error("Failed to fetch group", err);
+      }
+    };
+
+    fetchGroup();
   }, [id]);
 
-  const handleUpload = (e) => {
+  // Upload image file using FormData
+  const handleUpload = async (e) => {
     const files = Array.from(e.target.files);
+    const newUploads = [];
 
-    // Convert files to base64 for preview and persistence
-    const fileReaders = files.map((file) => {
-      return new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.readAsDataURL(file);
-      });
-    });
+    for (const file of files) {
+      const formData = new FormData();
+      formData.append("file", file);
 
-    Promise.all(fileReaders).then((base64Files) => {
-      const updatedPhotos = [...media, ...base64Files];
-      const myNewPhotos = [...myPhotos, ...base64Files];
+      try {
+        const res = await fetch(
+          `http://localhost:5000/api/groups/${id}/upload`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
-      setMedia(updatedPhotos);
-      setMyPhotos(myNewPhotos);
-      setGroupData((prev) => ({ ...prev, photos: updatedPhotos }));
+        const result = await res.json();
+        if (result.media) {
+          newUploads.push(result.media);
+        }
+      } catch (err) {
+        console.error("Upload failed", err);
+      }
+    }
 
-      // Save to localStorage
-      const storedGroups =
-        JSON.parse(localStorage.getItem("createdGroups")) || [];
-      const updatedGroups = storedGroups.map((g) =>
-        g.id === Number(id) ? { ...g, photos: updatedPhotos } : g
-      );
-      localStorage.setItem("createdGroups", JSON.stringify(updatedGroups));
-    });
+    setMedia((prev) => [...prev, ...newUploads]);
+    setMyPhotos((prev) => [...prev, ...newUploads]);
   };
 
   const getDisplayedPhotos = () => {
@@ -88,18 +97,18 @@ const Creategroups = () => {
       {getDisplayedPhotos().length === 0 ? (
         <div className="empty-group">
           <div className="hanging-photos">
-            <img src="\images\dsd.jpg" alt="Photo1" />
-            <img src="\images\dsd.jpg" alt="Photo2" />
+            <img src="/images/dsd.jpg" alt="Photo1" />
+            <img src="/images/dsd.jpg" alt="Photo2" />
           </div>
           <p className="no-photo-text">No Photos to show yet</p>
           <button className="see-photos-btn">See all photos</button>
         </div>
       ) : (
         <div className="uploaded-photos">
-          {getDisplayedPhotos().map((base64, i) => (
+          {getDisplayedPhotos().map((mediaObj, i) => (
             <img
               key={i}
-              src={base64}
+              src={`http://localhost:5000${mediaObj.fileData}`}
               alt={`uploaded-${i}`}
               className="uploaded-img"
             />
