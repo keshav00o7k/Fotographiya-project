@@ -113,8 +113,8 @@ body {
 /* ===== Upload Button ===== */
 .upload-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  /* bottom: 20px; */
+  /* right: 20px; */
   background-color: #276a87;
   color: white;
   padding: 12px 24px;
