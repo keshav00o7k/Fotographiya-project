@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Profile1page from "./Profile1page";
+
 import "./Fotographiya_Wallet.css";
-import Navbar from "../../Navbar";
 
 const Fotographiya_wallet = () => {
   const [amount, setAmount] = useState(100);

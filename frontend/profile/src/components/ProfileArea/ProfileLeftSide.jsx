@@ -1,9 +1,9 @@
 import React from "react";
-import "./Profile1page.css";
+import "./ProfileLeftSide.css";
 
-function Profile1page({ activeIndex, onSectionChange }) {
+function ProfileLeftSide({ activeIndex, onSectionChange }) {
   return (
-    <div className="profile1page d">
+    <div className="ProfileLeftSide d">
       <div className="sidebar">
         <div className="sidebarMenu">
           <ul className="nk-menu">
@@ -46,4 +46,4 @@ function Profile1page({ activeIndex, onSectionChange }) {
   );
 }
 
-export default Profile1page;
+export default ProfileLeftSide;

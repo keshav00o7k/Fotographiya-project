@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Profile1page from "./Dashbord_component/Profile1page";
-import Fotographiya_Profile from "./Dashbord_component/Fotographiya_profile/Fotographiya_Profile";
-import Fotographiya_Wallet from "./Dashbord_component/Fotographiya_wallet";
-import Navbar from "../Navbar";
+import Profile1page from "./ProfileArea/ProfileLeftSide";
+import Fotographiya_Profile from "./ProfileArea/Fotographiya_Profile";
+import Fotographiya_Wallet from "./ProfileArea/Fotographiya_wallet";
+import Navbar from "./Navbar";
 import "./Fotographiyamain.css";
-import TransactionHistory from "./Dashbord_component/TransactionHistory";
+// import TransactionHistory from "./Dashbord_component/TransactionHistory";
 
 const Fotographiya_Main = ({ profileImage, setProfileImage }) => {
   const [activeSection, setActiveSection] = useState(0);

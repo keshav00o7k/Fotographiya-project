@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import "./Fotographiya_Profile.css";
 
 // Components
-import ProfileHeader from "./ProfileHeader";
-import ProfileImageEditor from "./ProfileImageEditor";
-import BasicInfoForm from "./BasicInfoForm";
-import HighResToggle from "./HighResToggle";
-import DownloadOriginalToggle from "./DownloadOriginalToggle";
-import StorageBox from "./StorageBox";
-import SubscriptionBox from "./SubscriptionBox";
-import PopupHighRes from "./PopupHighRes";
-import PopupDownloadOriginal from "./PopupDownloadOriginal";
-import PopupAdditionalInfo from "./PopupAdditionalInfo";
+import ProfileHeader from "./Fotographiya_profile/ProfileHeader";
+import ProfileImageEditor from "./Fotographiya_profile/ProfileImageEditor";
+import BasicInfoForm from "./Fotographiya_profile/BasicInfoForm";
+import HighResToggle from "./Fotographiya_profile/HighResToggle";
+import DownloadOriginalToggle from "./Fotographiya_profile/DownloadOriginalToggle";
+import StorageBox from "./Fotographiya_profile/StorageBox";
+import SubscriptionBox from "./Fotographiya_profile/SubscriptionBox";
+import PopupHighRes from "./Fotographiya_profile/PopupHighRes";
+import PopupDownloadOriginal from "./Fotographiya_profile/PopupDownloadOriginal";
+import PopupAdditionalInfo from "./Fotographiya_profile/PopupAdditionalInfo";
 
 const Fotographiya_Profile = ({ profileImage, setProfileImage }) => {
   const [showMoreOptions, setShowMoreOptions] = useState(false);

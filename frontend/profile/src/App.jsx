@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Page2 from "./components/Dashboard/Page2";
-import Fotographiya_Main from "./components/Under_dashboard/Fotographiyamain.jsx";
+import Fotographiya_Main from "./components/Fotographiyamain.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Creategroups from "./components/Dashboard/join-group/Creategroups";
 
