@@ -1,0 +1,53 @@
+/* ===== Tabs ===== */
+.group-tabs {
+  display: flex;
+  gap: 40px;
+  padding: 0 40px;
+  background: white;
+  border-bottom: 2px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.group-tabs span {
+  cursor: pointer;
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 3px solid transparent;
+}
+
+.group-tabs span:hover {
+  color: #667eea;
+  transform: translateY(-1px);
+}
+
+.group-tabs .active-tab {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.group-tabs .active-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .group-tabs {
+    gap: 20px;
+    padding: 0 25px;
+    overflow-x: auto;
+  }
+}

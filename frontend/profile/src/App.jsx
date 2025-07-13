@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Page2 from "./components/Dashboard/Page2";
 import Fotographiya_Main from "./components/Fotographiyamain.jsx";
 import Navbar from "./components/Navbar.jsx";
-import Creategroups from "./components/Dashboard/join-group/Creategroups";
+import GroupDetail from "./components/Group-details/GroupDetail.jsx";
 
 function App() {
   const [profileImage, setProfileImage] = useState("/images/pte.jpg");
@@ -22,7 +22,7 @@ function App() {
             />
           }
         />
-        <Route path="/group/:id" element={<Creategroups />} />
+        <Route path="/group/:id" element={<GroupDetail />} />
       </Routes>
     </>
   );

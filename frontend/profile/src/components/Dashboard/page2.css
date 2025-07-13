@@ -9,7 +9,7 @@
   justify-content: space-between;
 }
 
-.botton1 {
+.button1 {
   font-size: 14.4px;
   color: #296fa8;
   font-weight: 500;
@@ -25,7 +25,7 @@
   color: #3e6588;
 }
 
-.sarchlogo {
+.searchlogo {
   height: 30px;
 }
 
@@ -34,7 +34,7 @@
   gap: 14px;
 }
 
-.botton2 {
+.button2 {
   background-color: #2887af;
   color: white;
   padding: 16px;
