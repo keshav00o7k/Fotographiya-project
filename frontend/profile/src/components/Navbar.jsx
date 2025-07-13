@@ -11,13 +11,13 @@ const Navbar = ({ profileImage }) => {
   return (
     <nav className="navbar">
       <div className="navbar-left" onClick={homepage}>
-        <img src="./images/logo.png" alt="Kwikpic Logo" className="logo" />
+        <img src="/images/logo.png" alt="Kwikpic Logo" className="logo" />
         <span className="brand-name"></span>
       </div>
 
       <div className="navbar-right">
         <img
-          src="./images/Bellicon.jpg"
+          src="/images/Bellicon.jpg"
           alt="Notifications"
           className="bell-icon"
         />

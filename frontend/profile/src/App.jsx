@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar.jsx";
 import Creategroups from "./components/Dashboard/join-group/Creategroups";
 
 function App() {
-  const [profileImage, setProfileImage] = useState("./images/pte.jpg");
+  const [profileImage, setProfileImage] = useState("/images/pte.jpg");
 
   return (
     <>
